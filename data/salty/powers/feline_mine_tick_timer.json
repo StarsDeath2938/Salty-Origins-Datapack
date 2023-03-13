@@ -1,0 +1,93 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 20,
+  "entity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "comparison": "==",
+              "resource": "salty:feline_resource_mine",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "offhand",
+              "inverted": false,
+              "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "tag": "salty:fish"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "mainhand",
+              "inverted": false,
+              "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "tag": "salty:pickaxes"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:change_resource",
+              "resource": "salty:feline_resource_mine",
+              "change": 20
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "clear @s #salty:fish 1",
+              "permission_level": 4
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "playsound minecraft:entity.cat.eat master @a[distance=..10] ~ ~ ~ 2 0.7",
+              "permission_level": 4
+            }
+          ]
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "comparison": ">",
+              "resource": "salty:feline_resource_mine",
+              "compare_to": 0
+            }
+          ]
+        },
+        "action": {
+          "type": "origins:change_resource",
+          "resource": "salty:feline_resource_mine",
+          "change": -1
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

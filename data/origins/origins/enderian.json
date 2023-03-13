@@ -1,0 +1,20 @@
+{
+  "loading_priority": 10,
+  "powers": [
+    "origins:water_vulnerability",
+    "origins:ender_particles",
+    "origins:damage_from_potions",
+    "salty:enderian_ender_pearl",
+    "salty:enderian_pumpkin_hate",
+    "salty:enderian_extra_reach",
+    "salty:enderian_resource_rage",
+    "salty:enderian_resource_raging",
+    "salty:enderian_raging",
+    "salty:enderian_taunt"
+  ],
+  "icon": {
+    "item": "minecraft:ender_pearl"
+  },
+  "order": 1,
+  "impact": 2
+}

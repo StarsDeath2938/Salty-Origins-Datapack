@@ -1,0 +1,74 @@
+{
+  "type": "origins:active_self",
+  "cooldown": 20,
+  "hud_render": {
+    "should_render": false,
+    "sprite_location": "origins:textures/gui/resource_bar.png",
+    "bar_index": 5
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "clear @s minecraft:heart_of_the_sea 1",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "weather thunder",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.guardian.death master @s ~ ~ ~ 5 1 0.8",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:block.beacon.activate master @s ~ ~ ~ 5 1 0.8",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "function salty:charibdis",
+        "permission_level": 4
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water",
+        "inverted": true
+      },
+      {
+        "type": "origins:in_rain",
+        "inverted": true
+      },
+      {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+      },
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:heart_of_the_sea"
+          }
+        }
+      }
+    ]
+  },
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  }
+}

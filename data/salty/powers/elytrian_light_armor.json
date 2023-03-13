@@ -1,0 +1,167 @@
+{
+	"type": "origins:multiple",
+	"prevent_chestplate_elytra": {
+		"type": "origins:restrict_armor",
+		"chest": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:elytra"
+			}
+		},
+		"hidden": true
+	},
+	"more_kinetic_damage": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"name": "More kinetic damage taken",
+			"value": 0.25,
+			"operation": "multiply_base"
+		},
+		"damage_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:name",
+					"name": "flyIntoWall"
+				},
+				{
+					"type": "origins:from_falling"
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "chest",
+			"item_condition": {
+				"type": "origins:armor_value",
+				"comparison": ">",
+				"compare_to": 1
+			}
+		}
+	},
+	"slow_falling": {
+		"type": "origins:modify_falling",
+		"velocity": 0.06,
+		"take_fall_damage": false,
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "chest",
+			"item_condition": {
+				"type": "origins:armor_value",
+				"comparison": "<=",
+				"compare_to": 1
+			}
+		},
+		"hidden": true
+	},
+	"fast_falling": {
+		"type": "origins:modify_falling",
+		"velocity": 0.12,
+		"take_fall_damage": false,
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "chest",
+			"item_condition": {
+				"type": "origins:armor_value",
+				"comparison": ">",
+				"compare_to": 5
+			}
+		},
+		"hidden": true
+	},
+	"light_velocity": {
+		"type": "origins:modify_velocity",
+		"modifier": {
+			"value": -0.2,
+			"operation": "multiply_total"
+		},
+		"axes": [
+			"y"
+		],
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 1
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": "<=",
+						"compare_to": 5
+					}
+				}
+			]
+		},
+		"hidden": true
+	},
+	"heavy_velocity": {
+		"type": "origins:modify_velocity",
+		"modifier": {
+			"value": 0.3,
+			"operation": "multiply_total"
+		},
+		"axes": [
+			"y"
+		],
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": ">",
+						"compare_to": 1
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:armor_value",
+						"comparison": "<=",
+						"compare_to": 5
+					}
+				},
+				{
+					"type": "origins:fall_flying"
+				}
+			]
+		},
+		"hidden": true
+	},
+	"prevent_sprint": {
+		"type": "origins:prevent_sprinting",
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "chest",
+			"item_condition": {
+				"type": "origins:armor_value",
+				"comparison": ">",
+				"compare_to": 5
+			}
+		}
+	},
+	"prevent_flying": {
+		"type": "origins:prevent_elytra_flight",
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "chest",
+			"item_condition": {
+				"type": "origins:armor_value",
+				"comparison": ">",
+				"compare_to": 5
+			}
+		}
+	}
+}

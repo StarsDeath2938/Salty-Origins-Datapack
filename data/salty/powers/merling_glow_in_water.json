@@ -1,0 +1,11 @@
+{
+    "type": "origins:particle",
+    "particle": "minecraft:glow",
+    "frequency": 8,
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water",
+        "inverted": false
+    },
+    "hidden": true
+  }

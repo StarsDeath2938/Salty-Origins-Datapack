@@ -1,0 +1,67 @@
+{
+    "type": "origins:multiple",
+    "lava_wander": {
+        "type": "origins:walk_on_fluid",
+        "fluid": "minecraft:lava",
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": "<=",
+            "compare_to": 0.4
+        }
+    },
+    "lava_swiming": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:lava",
+                    "inverted": false
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0,
+                    "inverted": false
+                }
+            ]
+        }
+    },
+    "lava_swiming_speed": {
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.75
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:lava",
+                    "inverted": false
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0,
+                    "inverted": false
+                },
+                {
+                    "type": "origins:swimming"
+                }
+            ]
+        },
+        "hidden": true
+    },
+    "lava_vision": {
+        "type": "origins:lava_vision",
+        "s": 4,
+        "v": 16,
+        "hidden": true
+    }
+}

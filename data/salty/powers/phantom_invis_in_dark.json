@@ -1,0 +1,166 @@
+{
+	"type": "origins:multiple",
+	"light":
+	{
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"start_value": 0,
+		"name": "Light",
+		"description": "Are you in darkness?",
+		"hud_render": {
+			"should_render": false,
+			"bar_index": 14,
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
+		}
+	},
+	"update_light":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:or",
+								"conditions": [
+									{
+										"type": "origins:in_block",
+										"block_condition": {
+											"type": "origins:light_level",
+											"comparison": ">",
+											"compare_to": 11
+										}
+									},
+									{
+										"type": "origins:on_block",
+										"block_condition": {
+											"type": "origins:light_level",
+											"comparison": ">",
+											"compare_to": 11
+										}
+									},
+									{
+										"type": "origins:exposed_to_sun"
+									},
+									{
+										"type": "origins:status_effect",
+										"effect": "minecraft:glowing"
+									}
+								]
+							},
+							{
+								"type": "origins:resource",
+								"comparison": "==",
+								"resource": "*:*_light",
+								"compare_to": 0
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "*:*_light",
+								"change": 1
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:in_block",
+								"block_condition": {
+									"type": "origins:light_level",
+									"comparison": "<=",
+									"compare_to": 11
+								}
+							},
+							{
+								"type": "origins:on_block",
+								"block_condition": {
+									"type": "origins:light_level",
+									"comparison": "<=",
+									"compare_to": 11
+								}
+							},
+							{
+								"type": "origins:exposed_to_sun",
+								"inverted": true
+							},
+							{
+								"type": "origins:status_effect",
+								"effect": "minecraft:glowing",
+								"inverted": true
+							},
+							{
+								"type": "origins:resource",
+								"comparison": "==",
+								"resource": "*:*_light",
+								"compare_to": 1
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "*:*_light",
+								"change": -1
+							}
+						]
+					}
+				}
+			]
+		},
+		"interval": 10
+	},
+	"invis_in_dark":
+	{
+		"type": "origins:invisibility",
+		"render_armor": false,
+		"condition": {
+			"type": "origins:resource",
+			"comparison": "==",
+			"resource": "*:*_light",
+			"compare_to": 0
+		}
+	},
+	"particle_in_dark": {
+		"type": "origins:particle",
+		"particle": "minecraft:smoke",
+		"frequency": 8,
+		"visible_while_invisible": true,
+		"spread": {
+			"x": 0.5,
+			"y": 1.0,
+			"z": 0.5
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"comparison": "==",
+					"resource": "*:*_light",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:power_active",
+					"power": "*:phantomize",
+					"inverted": true
+				}
+			]
+	
+		},
+		"hidden": true
+	}
+}

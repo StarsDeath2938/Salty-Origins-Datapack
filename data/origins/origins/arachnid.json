@@ -1,0 +1,18 @@
+{
+  "loading_priority": 10,
+  "powers": [
+    "origins:climbing",
+    "origins:master_of_webs",
+    "origins:carnivore",
+    "origins:fragile",
+    "origins:arthropod",
+    "salty:arachnid_fangs",
+    "salty:arachnid_tied_attacker",
+    "salty:arachnid_taunt"
+  ],
+  "icon": {
+    "item": "minecraft:cobweb"
+  },
+  "order": 1,
+  "impact": 1
+}

@@ -1,0 +1,77 @@
+{
+	"type": "origins:multiple",
+
+	"the_ninth_live": {
+		"type":"origins:prevent_death",
+		  "entity_action": {
+			  "type": "origins:and",
+			  "actions": [
+				  {
+					  "type": "origins:clear_effect"
+				  },
+				  {
+					  "type": "origins:execute_command",
+					  "command": "effect give @s minecraft:regeneration 2 5 true",
+					  "permission_level": 4
+				  },
+				  {
+					  "type": "origins:execute_command",
+					  "command": "effect give @s minecraft:speed 20 2 true",
+					  "permission_level": 4
+				  },
+				  {
+					  "type": "origins:execute_command",
+					  "command": "effect give @s minecraft:weakness 300 9 true",
+					  "permission_level": 4
+				  },
+				  {
+					  "type": "origins:change_resource",
+					  "resource": "salty:feline_resource_lives",
+					  "change": -1
+				  },
+				  {
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.cat.hiss master @a[distance=..5] ~ ~ ~ 2 1",
+					"permission_level": 4
+				  }
+			  ]
+		  },
+		  "condition": {
+			  "type": "origins:and",
+			  "conditions": [
+				  {
+					  "type": "origins:resource",
+					  "comparison": ">",
+					  "resource": "salty:feline_resource_lives",
+					  "compare_to": 0
+				  }
+			  ]
+		  },
+		"hidden": true
+	},
+
+	"recharge_wakeup_in_orange_bed": {
+		"type": "origins:action_on_wake_up",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "salty:feline_resource_lives",
+			"change": 1
+		},
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:orange_bed"
+		},
+		"hidden": true
+	},
+
+	"callback": {
+		"type": "origins:action_on_callback",
+		"entity_action_respawned": 	{
+			"type": "origins:change_resource",
+			"resource": "salty:feline_resource_lives",
+			"change": 1
+		},
+		"execute_chosen_when_orb": true,
+		"hidden": true
+	}
+}

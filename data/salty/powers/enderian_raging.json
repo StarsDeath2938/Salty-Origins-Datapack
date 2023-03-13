@@ -1,0 +1,227 @@
+{
+	"type": "origins:multiple",
+	"rage_ticks": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:resource",
+								"resource": "salty:enderian_resource_rage",
+								"comparison": "==",
+								"compare_to": 120
+							},
+							{
+								"type": "origins:resource",
+								"resource": "salty:enderian_resource_raging",
+								"comparison": "==",
+								"compare_to": 0
+							}
+						]
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:enderian_resource_raging",
+						"operation": "set",
+						"change": 1
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "salty:enderian_resource_rage",
+						"comparison": ">",
+						"compare_to": 0
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:enderian_resource_rage",
+						"change": -1
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "salty:enderian_resource_rage",
+						"comparison": "==",
+						"compare_to": 0
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:enderian_resource_raging",
+						"operation": "set",
+						"change": 0
+					}
+				}
+			]
+		},
+		"hidden": true
+	},
+	"rage_when_attack": {
+		"type": "origins:self_action_on_hit",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "salty:enderian_resource_rage",
+			"operation": "add",
+			"change": 60
+		},
+		"cooldown": 0,
+		"damage_condition": {
+			"type": "origins:amount",
+			"comparison": ">=",
+			"compare_to": 4.0
+		},
+		"hidden": true
+	},
+	"rage_when_hit": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "salty:enderian_resource_raging",
+						"comparison": "==",
+						"compare_to": 0
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "salty:enderian_resource_rage",
+								"operation": "set",
+								"change": 120
+							},
+							{
+								"type": "origins:change_resource",
+								"resource": "salty:enderian_resource_raging",
+								"operation": "set",
+								"change": 1
+							},
+							{
+								"type": "origins:execute_command",
+								"command": "playsound minecraft:entity.enderman.stare master @a[distance=..60] ~ ~ ~ 2 1.3",
+								"permission_level": 4
+							},
+							{
+								"type": "origins:execute_command",
+								"command": "playsound minecraft:entity.enderman.scream master @a[distance=..60] ~ ~ ~ 2 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "salty:enderian_resource_raging",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "salty:enderian_resource_rage",
+								"change": 80
+							},
+							{
+								"type": "origins:execute_command",
+								"command": "playsound minecraft:entity.enderman.hurt master @a[distance=..8] ~ ~ ~ 2 1",
+								"permission_level": 4
+							}
+						]
+					}
+				}
+			]
+		},
+		"cooldown": 20,
+		"damage_condition": {
+			"type": "origins:attacker",
+			"entity_condition": {
+				"type": "origins:living"
+			}
+		},
+		"hidden": true
+	},
+	"raging_effect": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 12,
+		"effect": {
+			"effect": "minecraft:speed",
+			"amplifier": 1,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:resource",
+			"comparison": "==",
+			"resource": "salty:enderian_resource_raging",
+			"compare_to": 1
+		},
+		"hidden": true
+	},
+	"rage_attack": {
+		"type": "origins:modify_damage_dealt",
+		"target_condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+			  "type": "origins:ingredient",
+			  "ingredient": {
+				"item": "minecraft:carved_pumpkin"
+			  },
+			  "inverted": true
+			}
+		},
+		"damage_condition": {
+			"type": "origins:amount",
+			"comparison": ">=",
+			"compare_to": 4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"comparison": "==",
+			"resource": "salty:enderian_resource_raging",
+			"compare_to": 1
+		},
+		"modifier": {
+			"name": "Extra damage when raging",
+			"operation": "addition",
+			"value": 3.0
+		},
+		"hidden": true
+	},
+	"callback": {
+		"type": "origins:action_on_callback",
+		"entity_action_respawned": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "salty:enderian_resource_rage",
+					"operation": "set",
+					"change": 0
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "salty:enderian_resource_raging",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hidden": true
+	}
+}

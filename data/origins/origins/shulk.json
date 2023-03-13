@@ -1,0 +1,18 @@
+{
+  "loading_priority": 10,
+  "powers": [
+    "origins:no_shield",
+    "origins:more_exhaustion",
+    "salty:shulk_no_elytra",
+    "salty:shulk_natural_armor",
+    "salty:shulk_resource_hiding",
+    "salty:shulk_hiding_trigger",
+    "salty:shulk_hiding",
+    "salty:shulk_taunt"
+  ],
+  "icon": {
+    "item": "minecraft:shulker_shell"
+  },
+  "order": 4,
+  "impact": 1
+}

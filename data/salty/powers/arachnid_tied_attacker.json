@@ -1,0 +1,31 @@
+{
+	"type": "origins:attacker_action_when_hit",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "effect give @s minecraft:mining_fatigue 3 1 false",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:block_action_at",
+				"block_action": {
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:replacable"
+					},
+					"if_action": {
+						"type": "origins:set_block",
+						"block": "origins:temporary_cobweb"
+					}
+				}
+			}
+		]
+	},
+	"cooldown": 120,
+	"hud_render": {
+		"should_render": false
+	}
+}
+//Umena says hi

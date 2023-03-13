@@ -1,0 +1,60 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 0,
+	"hud_render": {
+	  "should_render":false,
+	  "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+	  "bar_index": 1
+	},
+	"entity_action": {
+		"type": "origins:if_else_list",
+		"actions": [
+			{
+				"condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:sprinting"
+						},
+						{
+							"type": "origins:resource",
+							"comparison": ">",
+							"resource": "salty:avian_resource_momentum",
+							"compare_to": 90
+						},
+						{
+							"type": "origins:resource",
+							"comparison": "==",
+							"resource": "salty:avian_resource_soaring",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:on_block",
+							"inverted": true
+						}
+					]
+				},
+				"action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:change_resource",
+							"resource": "salty:avian_resource_soaring",
+							"change": 1
+						},
+						{
+						  "type": "origins:execute_command",
+						  "command": "playsound minecraft:entity.parrot.fly master @a[distance=..5] ~ ~ ~ 2 0.7",
+						  "permission_level": 4
+						}
+					]
+				}
+			}
+		]
+	},
+	"hidden": true,
+	"key": {
+		"key":"key.jump",
+		"continuous": false
+	}
+}

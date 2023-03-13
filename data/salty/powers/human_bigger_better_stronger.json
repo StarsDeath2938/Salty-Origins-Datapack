@@ -1,0 +1,105 @@
+{
+	"type": "origins:multiple",
+	"bigger_better_stronger": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:attacker",
+			"entity_condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "origins:origin",
+						"origin": "origins:arachnid"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:avian"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:blazeborn"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:elytrian"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:enderian"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:feline"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:merling"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:phantom"
+					},
+					{
+						"type": "origins:origin",
+						"origin": "origins:shulk"
+					}
+				]
+			}
+		},
+		"modifier": {
+			"name": "Bigger Better Steve",
+			"operation": "multiply_base_multiplicative",
+			"value": -0.1
+		}
+	},
+	"bigger_bigger_better_stronger": {
+		"type": "origins:modify_damage_dealt",
+		"target_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:origin",
+					"origin": "origins:arachnid"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:avian"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:blazeborn"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:elytrian"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:enderian"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:feline"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:merling"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:phantom"
+				},
+				{
+					"type": "origins:origin",
+					"origin": "origins:shulk"
+				}
+			],
+			"modifier": {
+				"name": "Bigger Better Stronger Steve",
+				"operation": "multiply_base_multiplicative",
+				"value": 0.05
+			}
+		},
+		"hidden": true
+	}
+}

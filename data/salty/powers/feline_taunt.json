@@ -1,0 +1,49 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 10,
+	"hud_render": {
+	  "should_render":false,
+	  "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+	  "bar_index": 1
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+			  "type": "origins:execute_command",
+			  "command": "playsound minecraft:entity.cat.ambient master @a[distance=..15] ~ ~ ~ 2 0.7",
+			  "permission_level": 4
+			},
+			{
+			  "type": "origins:execute_command",
+			  "command": "effect give @e[type=minecraft:creeper,distance=..15] minecraft:speed 2 1 true",
+			  "permission_level": 4
+			},
+			{
+				"type": "origins:delay",
+				"ticks": 10,
+				"action":{
+					"type": "origins:execute_command",
+					"command": "execute at @e[type=minecraft:cat,distance=..15] run playsound minecraft:entity.cat.ambient master @a[distance=..15] ~ ~ ~ 2 0.7",
+					"permission_level": 4
+				}
+			}
+		]
+	},
+	"condition":
+	{	
+		"type": "origins:and",
+		"conditions":
+		[
+			{
+			  "type": "origins:on_block",
+			  "inverted": false
+			}
+		]
+	},
+	"hidden": true,
+	"key": {
+		"key":"key.playerlist",
+		"continuous": false
+	}
+}

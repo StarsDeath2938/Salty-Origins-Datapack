@@ -1,0 +1,43 @@
+{
+  "type": "origins:modify_break_speed",
+  "modifier": {
+    "name": "Unbreakable natural stone",
+    "value": -1,
+    "operation": "multiply_total"
+  },
+  "block_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:in_tag",
+        "tag": "origins:natural_stone"
+      },
+      {
+        "type": "origins:adjacent",
+        "adjacent_condition": {
+          "type": "origins:in_tag",
+          "tag": "origins:natural_stone"
+        },
+        "comparison": ">",
+        "compare_to": 3
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "comparison": "==",
+        "resource": "salty:feline_resource_mine",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:status_effect",
+        "effect": "minecraft:strength",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

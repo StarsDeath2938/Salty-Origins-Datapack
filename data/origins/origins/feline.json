@@ -1,0 +1,22 @@
+{
+  "loading_priority": 10,
+  "powers": [
+    "origins:fall_immunity",
+    "origins:sprint_jump",
+    "origins:velvet_paws",
+    "origins:nine_lives",
+    "origins:scare_creepers",
+    "origins:cat_vision",
+    "salty:feline_resource_lives",
+    "salty:feline_the_ninth_live",
+    "salty:feline_resource_mine",
+    "salty:feline_weak_arms",
+    "salty:feline_mine_tick_timer",
+    "salty:feline_taunt"
+  ],
+  "icon": {
+    "item": "minecraft:orange_wool"
+  },
+  "order": 0,
+  "impact": 2
+}

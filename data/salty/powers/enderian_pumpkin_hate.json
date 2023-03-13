@@ -1,0 +1,50 @@
+{
+  "type": "origins:multiple",
+  "prevent_eating": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:pumpkin_related"
+      }
+    }
+  },
+  "prevent_seeing": {
+    "type": "origins:prevent_entity_render",
+    "entity_condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "head",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:carved_pumpkin"
+        }
+      }
+    }
+  },
+  "prevent_wearing": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:carved_pumpkin"
+      }
+    },
+    "hidden": true
+  },
+  "pumpkin_tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:pumpkin_related"
+      }
+    },
+    "text": "???"
+  },
+  "snowwwman": {
+    "type": "origins:prevent_feature_render",
+    "feature": "snowman_pumpkin",
+    "hidden": true
+  }
+}

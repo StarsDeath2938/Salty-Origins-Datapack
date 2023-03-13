@@ -1,0 +1,81 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 100,
+	"hud_render": {
+	  "should_render":false,
+	  "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+	  "bar_index": 1
+	},
+	"entity_action": {
+		"type": "origins:if_else_list",
+		"actions": [
+			{
+				"condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:submerged_in",
+							"fluid": "minecraft:water",
+							"inverted": false
+						}
+					]
+				},
+				"action": 	{
+					"type": "origins:and",
+					"actions": [
+						{
+						  "type": "origins:execute_command",
+						  "command": "playsound minecraft:block.conduit.activate master @a[distance=..15] ~ ~ ~ 25 1.5",
+						  "permission_level": 4
+						},
+						{
+							"type": "origins:delay",
+							"ticks": 20,
+							"action":{
+								"type": "origins:execute_command",
+								"command": "playsound minecraft:entity.elder_guardian.ambient master @a[distance=..60] ~ ~ ~ 1 1",
+								"permission_level": 4
+							}
+						}
+					]
+				}
+			},
+			{
+				"condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:submerged_in",
+							"fluid": "minecraft:water",
+							"inverted": true
+						}
+					]
+				},
+				"action": 	{
+					"type": "origins:and",
+					"actions": [
+						{
+						  "type": "origins:execute_command",
+						  "command": "playsound minecraft:entity.elder_guardian.flop master @a[distance=..15] ~ ~ ~ 1 1",
+						  "permission_level": 4
+						},
+						{
+							"type": "origins:delay",
+							"ticks": 20,
+							"action":{
+								"type": "origins:execute_command",
+								"command": "playsound minecraft:entity.elder_guardian.ambient_land master @a[distance=..15] ~ ~ ~ 1 1",
+								"permission_level": 4
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"hidden": true,
+	"key": {
+		"key":"key.playerlist",
+		"continuous": false
+	}
+}

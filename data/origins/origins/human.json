@@ -1,0 +1,11 @@
+{
+  "loading_priority": 10,
+  "icon": {
+    "item": "minecraft:player_head"
+  },
+  "powers": [
+    "salty:human_taunt"
+  ],
+  "order": 0,
+  "impact": 0
+}
