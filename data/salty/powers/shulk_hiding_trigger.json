@@ -38,9 +38,8 @@
               "change": -1
             },
             {
-              "type": "origins:execute_command",
-              "command": "playsound minecraft:entity.shulker.open master @a[distance=..10] ~ ~ ~ 2 1",
-              "permission_level": 4
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.shulker.open"
             },
             {
               "type": "origins:execute_command",
@@ -74,9 +73,8 @@
               "change": 1
             },
             {
-              "type": "origins:execute_command",
-              "command": "playsound minecraft:entity.shulker.close master @a[distance=..10] ~ ~ ~ 2 1",
-              "permission_level": 4
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.shulker.close"
             },
             {
               "type": "origins:execute_command",

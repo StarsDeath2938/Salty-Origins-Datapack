@@ -15,9 +15,8 @@
 				"permission_level": 4
 			},
 			{
-			  "type": "origins:execute_command",
-			  "command": "playsound minecraft:entity.shulker.ambient master @a[distance=..15] ~ ~ ~ 2 0.7",
-			  "permission_level": 4
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.shulker.ambient"
 			},
 			{
 				"type": "origins:delay",
@@ -31,43 +30,24 @@
 			{
 				"type": "origins:delay",
 				"ticks": 10,
-				"action":{
-					"type": "origins:and",
-					"actions": [
-						{
-						  "type": "origins:execute_command",
-						  "command": "playsound minecraft:entity.shulker.close master @a[distance=..15] ~ ~ ~ 2 0.7",
-						  "permission_level": 4
-						}
-					]
+				"action": {
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.shulker.close"
 				}
 			},
 			{
 				"type": "origins:delay",
 				"ticks": 30,
-				"action":{
-					"type": "origins:and",
-					"actions": [
-						{
-						  "type": "origins:execute_command",
-						  "command": "playsound minecraft:entity.shulker.open master @a[distance=..15] ~ ~ ~ 2 0.7",
-						  "permission_level": 4
-						}
-					]
+				"action": {
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.shulker.open"
 				}
 			}
 		]
 	},
-	"condition":
-	{	
-		"type": "origins:and",
-		"conditions":
-		[
-			{
-			  "type": "origins:on_block",
-			  "inverted": false
-			}
-		]
+	"condition": {
+		"type": "origins:on_block",
+		"inverted": false
 	},
 	"hidden": true,
 	"key": {

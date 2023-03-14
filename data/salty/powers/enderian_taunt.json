@@ -15,18 +15,8 @@
 				"permission_level": 4
 			},
 			{
-			  "type": "origins:execute_command",
-			  "command": "playsound minecraft:entity.enderman.ambient master @a[distance=..15] ~ ~ ~ 2 0.7",
-			  "permission_level": 4
-			},
-			{
-				"type": "origins:delay",
-				"ticks": 10,
-				"action":{
-					"type": "origins:execute_command",
-					"command": "execute at @e[type=minecraft:enderman,distance=..15] run playsound minecraft:entity.enderman.ambient master @a[distance=..15] ~ ~ ~ 2 0.7",
-					"permission_level": 4
-				}
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.enderman.ambient"
 			}
 		]
 	},

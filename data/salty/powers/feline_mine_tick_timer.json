@@ -62,9 +62,8 @@
               "permission_level": 4
             },
             {
-              "type": "origins:execute_command",
-              "command": "playsound minecraft:entity.cat.eat master @a[distance=..10] ~ ~ ~ 2 0.7",
-              "permission_level": 4
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.cat.eat"
             }
           ]
         }

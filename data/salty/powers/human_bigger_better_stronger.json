@@ -49,7 +49,7 @@
 		"modifier": {
 			"name": "Bigger Better Steve",
 			"operation": "multiply_base_multiplicative",
-			"value": -0.1
+			"value": -0.05
 		}
 	},
 	"bigger_bigger_better_stronger": {

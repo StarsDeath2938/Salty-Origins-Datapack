@@ -21,11 +21,11 @@
     "minecraft:cooked_salmon",
     "minecraft:spider_eye",
     {
-      "tag": "c:raw_fishes",
+      "tag": "#c:raw_fishes",
       "required": false
     },
     {
-      "tag": "c:cooked_fishes",
+      "tag": "#c:cooked_fishes",
       "required": false
     },
     {

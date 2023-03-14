@@ -106,14 +106,12 @@
 								"change": 1
 							},
 							{
-								"type": "origins:execute_command",
-								"command": "playsound minecraft:entity.enderman.stare master @a[distance=..60] ~ ~ ~ 2 1.3",
-								"permission_level": 4
+								"type": "origins:play_sound",
+								"sound": "minecraft:entity.enderman.stare"
 							},
 							{
-								"type": "origins:execute_command",
-								"command": "playsound minecraft:entity.enderman.scream master @a[distance=..60] ~ ~ ~ 2 1",
-								"permission_level": 4
+								"type": "origins:play_sound",
+								"sound": "minecraft:entity.enderman.scream"
 							}
 						]
 					}
@@ -134,9 +132,8 @@
 								"change": 80
 							},
 							{
-								"type": "origins:execute_command",
-								"command": "playsound minecraft:entity.enderman.hurt master @a[distance=..8] ~ ~ ~ 2 1",
-								"permission_level": 4
+								"type": "origins:play_sound",
+								"sound": "minecraft:entity.enderman.hurt"
 							}
 						]
 					}
@@ -157,13 +154,22 @@
 		"min_stacks": 0,
 		"max_stacks": 1,
 		"duration_per_stack": 12,
-		"effect": {
-			"effect": "minecraft:speed",
-			"amplifier": 1,
-			"is_ambient": true,
-			"show_particles": false,
-			"show_icon": false
-		},
+		"effects": [
+			{
+				"effect": "minecraft:speed",
+				"amplifier": 0,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			},
+			{
+				"effect": "minecraft:haste",
+				"amplifier": 0,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+		],
 		"condition": {
 			"type": "origins:resource",
 			"comparison": "==",
@@ -199,7 +205,7 @@
 		"modifier": {
 			"name": "Extra damage when raging",
 			"operation": "addition",
-			"value": 3.0
+			"value": 2.0
 		},
 		"hidden": true
 	},

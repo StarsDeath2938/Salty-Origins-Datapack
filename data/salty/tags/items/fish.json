@@ -8,7 +8,7 @@
 		"minecraft:cod",
 		"minecraft:salmon",
 		{
-			"tag": "c:fish",
+			"tags": "#c:fish",
 			"required": false
 		}
 	]

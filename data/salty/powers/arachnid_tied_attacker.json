@@ -4,9 +4,12 @@
 		"type": "origins:and",
 		"actions": [
 			{
-				"type": "origins:execute_command",
-				"command": "effect give @s minecraft:mining_fatigue 3 1 false",
-				"permission_level": 4
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:weakness",
+					"duration": 60,
+					"amplifier": 0
+				}
 			},
 			{
 				"type": "origins:block_action_at",

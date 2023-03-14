@@ -10,9 +10,8 @@
 		"type": "origins:and",
 		"actions": [
 			{
-			  "type": "origins:execute_command",
-			  "command": "playsound minecraft:entity.spider.step master @a[distance=..15] ~ ~ ~ 10 1",
-			  "permission_level": 4
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.spider.step"
 			},
 			{
 				"type": "origins:execute_command",
@@ -23,32 +22,23 @@
 				"type": "origins:delay",
 				"ticks": 20,
 				"action":{
-					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.spider.ambient master @a[distance=..15] ~ ~ ~ 2 1",
-					"permission_level": 4
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.spider.ambient"
 				}
 			},
 			{
 				"type": "origins:delay",
 				"ticks": 25,
-				"action":{
-					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.spider.step master @a[distance=..15] ~ ~ ~ 10 1",
-					"permission_level": 4
+				"action": {
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.spider.step"
 				}
 			}
 		]
 	},
-	"condition":
-	{	
-		"type": "origins:and",
-		"conditions":
-		[
-			{
-			  "type": "origins:on_block",
-			  "inverted": false
-			}
-		]
+	"condition": {
+		"type": "origins:on_block",
+		"inverted": false
 	},
 	"hidden": true,
 	"key": {
