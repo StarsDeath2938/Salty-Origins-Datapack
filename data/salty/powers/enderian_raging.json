@@ -212,6 +212,12 @@
 				"duration": 40,
 				"amplifier": 0
 			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"comparison": "==",
+			"resource": "salty:enderian_resource_raging",
+			"compare_to": 1
 		}
 	},
 	"callback": {
