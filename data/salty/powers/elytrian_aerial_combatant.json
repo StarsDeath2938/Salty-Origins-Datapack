@@ -1,0 +1,36 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+		"type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 4
+    },
+    "target_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:levitation",
+                    "duration": 12,
+                    "amplifier": 1
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 10,
+                "action": {
+                    "type": "origins:damage",
+                    "amount": 16,
+                    "source": {
+                        "name": "fall.player",
+                        "bypasses_armor": true
+                    }
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:fall_flying"
+    }
+}

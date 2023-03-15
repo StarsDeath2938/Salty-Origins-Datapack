@@ -14,7 +14,7 @@
 								"type": "origins:resource",
 								"resource": "salty:enderian_resource_rage",
 								"comparison": "==",
-								"compare_to": 120
+								"compare_to": 180
 							},
 							{
 								"type": "origins:resource",
@@ -68,7 +68,7 @@
 			"type": "origins:change_resource",
 			"resource": "salty:enderian_resource_rage",
 			"operation": "add",
-			"change": 60
+			"change": 80
 		},
 		"cooldown": 0,
 		"damage_condition": {
@@ -97,7 +97,7 @@
 								"type": "origins:change_resource",
 								"resource": "salty:enderian_resource_rage",
 								"operation": "set",
-								"change": 120
+								"change": 180
 							},
 							{
 								"type": "origins:change_resource",
@@ -129,7 +129,7 @@
 							{
 								"type": "origins:change_resource",
 								"resource": "salty:enderian_resource_rage",
-								"change": 80
+								"change": 120
 							},
 							{
 								"type": "origins:play_sound",
@@ -161,13 +161,6 @@
 				"is_ambient": true,
 				"show_particles": false,
 				"show_icon": false
-			},
-			{
-				"effect": "minecraft:haste",
-				"amplifier": 0,
-				"is_ambient": true,
-				"show_particles": false,
-				"show_icon": false
 			}
 		],
 		"condition": {
@@ -184,11 +177,11 @@
 			"type": "origins:equipped_item",
 			"equipment_slot": "head",
 			"item_condition": {
-			  "type": "origins:ingredient",
-			  "ingredient": {
-				"item": "minecraft:carved_pumpkin"
-			  },
-			  "inverted": true
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:carved_pumpkin"
+				},
+				"inverted": true
 			}
 		},
 		"damage_condition": {
@@ -208,6 +201,18 @@
 			"value": 2.0
 		},
 		"hidden": true
+	},
+	"attack_apply_darkness": {
+		"type": "origins:target_action_on_hit",
+		"cooldown": 200,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:blindness",
+				"duration": 40,
+				"amplifier": 0
+			}
+		}
 	},
 	"callback": {
 		"type": "origins:action_on_callback",

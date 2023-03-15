@@ -1,17 +1,41 @@
 {
-    "type": "origins:target_action_on_hit",
-    "cooldown": 120,
-    "hud_render": {
-        "should_render": false,
-        "bar_index": 8
-      },
-    "entity_action": {
-		  "type": "origins:apply_effect",
-		  "effect": {
-		  	"effect": "minecraft:poison",
-		  	"duration": 120,
-		  	"amplifier": 1
-		  }
-	}
+  "type": "origins:target_action_on_hit",
+  "cooldown": 200,
+  "entity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:entity_group",
+      "group": "undead"
+    },
+    "if_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:weakness",
+          "duration": 200,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 200,
+          "amplifier": 0
+        }
+      ]
+    },
+    "else_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:poison",
+          "duration": 200,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 200,
+          "amplifier": 0
+        }
+      ]
+    }
+  }
 }
-//Umena says hi

@@ -1,47 +1,34 @@
 {
   "type": "origins:multiple",
   "melee_damage": {
-    "type": "origins:modify_damage_dealt",
+    "type": "origins:target_action_on_hit",
+    "cooldown": 80,
     "damage_condition": {
       "type": "origins:amount",
       "comparison": ">=",
       "compare_to": 4
     },
-    "target_condition": {
-      "type": "origins:status_effect",
-      "effect": "minecraft:wither",
-      "inverted": true,
-      "min_amplifier": 0
-    },
-    "modifier": {
-      "operation": "addition",
-      "value": 1
-    },
-    "target_action": {
-		  "type": "origins:apply_effect",
-		  "effect": {
-		  	"effect": "minecraft:wither",
-		  	"duration": 200,
-		  	"amplifier": 1
-		  }
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:wither",
+        "duration": 100,
+        "amplifier": 1
+      }
     }
   },
   "projectile_damage": {
     "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">=",
+      "compare_to": 2
+    },
     "target_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:on_fire",
-          "inverted": true
-        },
-        {
-          "type": "origins:status_effect",
-          "effect": "minecraft:fire_resistance",
-          "inverted": true,
-          "min_amplifier": 0
-        }
-      ]
+      "type": "origins:status_effect",
+      "effect": "minecraft:fire_resistance",
+      "inverted": true,
+      "min_amplifier": 0
     },
     "target_action": {
       "type": "origins:set_on_fire",
