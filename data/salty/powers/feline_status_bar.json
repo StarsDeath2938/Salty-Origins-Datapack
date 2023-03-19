@@ -1,0 +1,23 @@
+{
+    "type": "origins:multiple",
+    "nine_live": {
+        "type": "origins:status_bar_texture",
+        "texture": "salty:textures/gui/icons_feline_nine_live.png",
+        "condition": {
+            "type": "origins:resource",
+            "comparison": ">",
+            "resource": "salty:feline_resource_lives",
+            "compare_to": 0
+        }
+    },
+    "normal": {
+        "type": "origins:status_bar_texture",
+        "texture": "salty:textures/gui/icons_feline_nine_live.png",
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "==",
+            "resource": "salty:feline_resource_lives",
+            "compare_to": 0
+        }
+    }
+}
