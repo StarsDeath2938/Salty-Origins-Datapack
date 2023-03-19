@@ -8,6 +8,36 @@
 			"actions": [
 				{
 					"condition": {
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:status_effect",
+								"effect": "minecraft:slowness",
+								"inverted": false,
+								"min_amplifier": 0
+							},
+							{
+								"type": "origins:fluid_height",
+								"fluid": "minecraft:water",
+								"comparison": "==",
+								"compare_to": 0.4
+							},
+							{
+								"type": "origins:fluid_height",
+								"fluid": "minecraft:lava",
+								"comparison": ">",
+								"compare_to": 0
+							}
+						]
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:avian_resource_soaring",
+						"change": -5
+					}
+				},
+				{
+					"condition": {
 						"type": "origins:and",
 						"conditions": [
 							{
@@ -149,14 +179,9 @@
 						]
 					},
 					"action": {
-						"type": "origins:and",
-						"actions": [
-							{
-								"type": "origins:change_resource",
-								"resource": "salty:avian_resource_soaring",
-								"change": -1
-							}
-						]
+						"type": "origins:change_resource",
+						"resource": "salty:avian_resource_soaring",
+						"change": -2
 					}
 				}
 			]
