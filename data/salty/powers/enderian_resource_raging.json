@@ -7,8 +7,6 @@
     "name": "Raging",
     "description": "Whether or not you are raging.",
     "hud_render": {
-        "should_render": true,
-        "bar_index": 22,
-        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+        "should_render": false
     }
 }

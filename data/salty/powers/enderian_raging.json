@@ -157,7 +157,7 @@
 		"effects": [
 			{
 				"effect": "minecraft:speed",
-				"amplifier": 0,
+				"amplifier": 1,
 				"is_ambient": true,
 				"show_particles": false,
 				"show_icon": false
@@ -201,24 +201,6 @@
 			"value": 2.0
 		},
 		"hidden": true
-	},
-	"attack_apply_darkness": {
-		"type": "origins:target_action_on_hit",
-		"cooldown": 200,
-		"entity_action": {
-			"type": "origins:apply_effect",
-			"effect": {
-				"effect": "minecraft:blindness",
-				"duration": 40,
-				"amplifier": 0
-			}
-		},
-		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "salty:enderian_resource_raging",
-			"compare_to": 1
-		}
 	},
 	"callback": {
 		"type": "origins:action_on_callback",
