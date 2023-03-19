@@ -20,7 +20,7 @@
 								"type": "origins:fluid_height",
 								"fluid": "minecraft:water",
 								"comparison": ">=",
-								"compare_to": 0.4
+								"compare_to": 0
 							},
 							{
 								"type": "origins:fluid_height",
@@ -32,7 +32,7 @@
 					},
 					"action": {
 						"type": "origins:change_resource",
-						"resource": "salty:avian_resource_soaring",
+						"resource": "salty:avian_resource_momentum",
 						"change": -5
 					}
 				},
