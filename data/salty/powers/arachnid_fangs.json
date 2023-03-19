@@ -1,33 +1,18 @@
 {
   "type": "origins:modify_damage_dealt",
   "entity_action": {
-    "type": "origins:if_else",
-    "condition": {
-      "type": "origins:entity_group",
-      "group": "undead"
-    },
-    "if_action": {
-      "type": "origins:apply_effect",
-      "effect": {
+    "type": "origins:apply_effect",
+    "effects": [
+      {
+        "effect": "minecraft:poison",
+        "duration": 80,
+        "amplifier": 0
+      },
+      {
         "effect": "minecraft:weakness",
         "duration": 80,
         "amplifier": 0
       }
-    },
-    "else_action": {
-      "type": "origins:apply_effect",
-      "effects": [
-        {
-          "effect": "minecraft:poison",
-          "duration": 80,
-          "amplifier": 0
-        },
-        {
-          "effect": "minecraft:weakness",
-          "duration": 80,
-          "amplifier": 0
-        }
-      ]
-    }
+    ]
   }
 }
