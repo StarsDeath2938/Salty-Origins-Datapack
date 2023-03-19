@@ -209,7 +209,7 @@
 		"modifier": {
 			"name": "Extra damage when raging",
 			"operation": "addition",
-			"value": 3.0
+			"value": 2.0
 		},
 		"hidden": true
 	},
