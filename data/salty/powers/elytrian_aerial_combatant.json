@@ -21,7 +21,7 @@
                 "ticks": 10,
                 "action": {
                     "type": "origins:damage",
-                    "amount": 16,
+                    "amount": 12,
                     "source": {
                         "name": "fall.player",
                         "bypasses_armor": true
