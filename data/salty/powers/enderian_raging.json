@@ -14,7 +14,7 @@
 								"type": "origins:resource",
 								"resource": "salty:enderian_resource_rage",
 								"comparison": "==",
-								"compare_to": 180
+								"compare_to": 150
 							},
 							{
 								"type": "origins:resource",
@@ -46,10 +46,21 @@
 				},
 				{
 					"condition": {
-						"type": "origins:resource",
-						"resource": "salty:enderian_resource_rage",
-						"comparison": "==",
-						"compare_to": 0
+						"type": "origins:and",
+						"conditions":[
+							{
+								"type": "origins:resource",
+								"resource": "salty:enderian_resource_rage",
+								"comparison": "==",
+								"compare_to": 0
+							},
+							{
+								"type": "origins:resource",
+								"resource": "salty:enderian_resource_raging",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						]
 					},
 					"action": {
 						"type": "origins:change_resource",
@@ -68,7 +79,7 @@
 			"type": "origins:change_resource",
 			"resource": "salty:enderian_resource_rage",
 			"operation": "add",
-			"change": 80
+			"change": 75
 		},
 		"cooldown": 0,
 		"damage_condition": {
@@ -97,7 +108,7 @@
 								"type": "origins:change_resource",
 								"resource": "salty:enderian_resource_rage",
 								"operation": "set",
-								"change": 180
+								"change": 150
 							},
 							{
 								"type": "origins:change_resource",
@@ -129,7 +140,7 @@
 							{
 								"type": "origins:change_resource",
 								"resource": "salty:enderian_resource_rage",
-								"change": 120
+								"change": 100
 							},
 							{
 								"type": "origins:play_sound",
@@ -198,7 +209,7 @@
 		"modifier": {
 			"name": "Extra damage when raging",
 			"operation": "addition",
-			"value": 2.0
+			"value": 3.0
 		},
 		"hidden": true
 	},
