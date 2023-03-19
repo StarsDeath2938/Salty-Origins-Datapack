@@ -2,7 +2,7 @@
   "loading_priority": 10,
   "powers": [
     "origins:elytra",
-    "origins:aerial_combatant",
+    "salty:elytrian_aerial_combatant",
     "salty:elytrian_claustrophobia",
     "salty:elytrian_launch_into_air",
     "salty:elytrian_light_armor",
