@@ -1,8 +1,7 @@
 {
   "type": "origins:multiple",
   "melee_damage": {
-    "type": "origins:target_action_on_hit",
-    "cooldown": 80,
+    "type": "origins:modify_damage_dealt",
     "damage_condition": {
       "type": "origins:amount",
       "comparison": ">=",
@@ -12,7 +11,7 @@
       "type": "origins:apply_effect",
       "effect": {
         "effect": "minecraft:wither",
-        "duration": 100,
+        "duration": 40,
         "amplifier": 1
       }
     }

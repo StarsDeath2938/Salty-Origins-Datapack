@@ -1,6 +1,5 @@
 {
-  "type": "origins:target_action_on_hit",
-  "cooldown": 200,
+  "type": "origins:modify_damage_dealt",
   "entity_action": {
     "type": "origins:if_else",
     "condition": {
@@ -9,30 +8,23 @@
     },
     "if_action": {
       "type": "origins:apply_effect",
-      "effects": [
-        {
-          "effect": "minecraft:weakness",
-          "duration": 200,
-          "amplifier": 0
-        },
-        {
-          "effect": "minecraft:slowness",
-          "duration": 200,
-          "amplifier": 0
-        }
-      ]
+      "effect": {
+        "effect": "minecraft:weakness",
+        "duration": 80,
+        "amplifier": 0
+      }
     },
     "else_action": {
       "type": "origins:apply_effect",
       "effects": [
         {
           "effect": "minecraft:poison",
-          "duration": 200,
+          "duration": 80,
           "amplifier": 0
         },
         {
           "effect": "minecraft:weakness",
-          "duration": 200,
+          "duration": 80,
           "amplifier": 0
         }
       ]

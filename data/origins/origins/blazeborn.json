@@ -2,7 +2,6 @@
   "loading_priority": 10,
   "powers": [
     "origins:fire_immunity",
-    "origins:hotblooded",
     "origins:water_vulnerability",
     "origins:flame_particles",
     "origins:damage_from_snowballs",
