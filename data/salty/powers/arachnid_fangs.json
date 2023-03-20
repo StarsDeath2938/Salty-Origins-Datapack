@@ -6,7 +6,7 @@
       {
         "effect": "minecraft:poison",
         "duration": 80,
-        "amplifier": 0
+        "amplifier": 1
       },
       {
         "effect": "minecraft:weakness",
