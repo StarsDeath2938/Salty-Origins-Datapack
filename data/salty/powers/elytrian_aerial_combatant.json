@@ -12,7 +12,7 @@
                 "type": "origins:apply_effect",
                 "effect": {
                     "effect": "minecraft:levitation",
-                    "duration": 12,
+                    "duration": 16,
                     "amplifier": 1
                 }
             },
