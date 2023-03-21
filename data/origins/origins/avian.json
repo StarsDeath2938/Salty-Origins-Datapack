@@ -1,9 +1,11 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:like_air",
     "origins:tailwind",
     "origins:lay_eggs",
     "origins:vegetarian",
+    "salty:avian_status_bar",
     "salty:avian_slow_falling",
     "salty:avian_fresh_air",
     "salty:avian_resource_momentum",

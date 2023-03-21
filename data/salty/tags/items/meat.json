@@ -21,14 +21,6 @@
     "minecraft:cooked_salmon",
     "minecraft:spider_eye",
     {
-      "tag": "#c:raw_fishes",
-      "required": false
-    },
-    {
-      "tag": "#c:cooked_fishes",
-      "required": false
-    },
-    {
       "id": "farmersdelight:ham",
       "required": false
     },

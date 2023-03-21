@@ -176,5 +176,6 @@
 			"type": "origins:power_active",
 			"power": "salty:enderian_toggle_dark_embrace"
 		}
-	}
+	},
+	"hidden": true
 }

@@ -1,4 +1,5 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:phantomize",
     "origins:translucent",
@@ -7,6 +8,7 @@
     "origins:burn_in_daylight",
     "origins:hunger_over_time",
     "origins:phantomize_overlay",
+    "salty:phantom_status_bar",
     "salty:phantom_invis_in_dark",
     "salty:phantom_fragile_in_light",
     "salty:phantom_taunt"

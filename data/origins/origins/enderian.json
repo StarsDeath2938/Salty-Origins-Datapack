@@ -1,7 +1,9 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:water_vulnerability",
-    "origins:damage_from_potions",
+    "origins:damage_from_potions",  
+    "salty:enderian_status_bar",
     "salty:enderian_ender_particle",
     "salty:enderian_ender_pearl",
     "salty:enderian_pumpkin_hate",

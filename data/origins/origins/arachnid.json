@@ -1,10 +1,12 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:climbing",
     "origins:master_of_webs",
     "origins:carnivore",
     "origins:fragile",
     "origins:arthropod",
+    "salty:arachnid_status_bar",
     "salty:arachnid_fangs",
     "salty:arachnid_tied_attacker",
     "salty:arachnid_taunt"

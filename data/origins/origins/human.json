@@ -1,8 +1,10 @@
 {
+  "loading_priority": 10,
   "icon": {
     "item": "minecraft:player_head"
   },
   "powers": [
+    "salty:human_status_bar",
     "salty:human_taunt"
   ],
   "order": 0,

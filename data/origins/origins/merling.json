@@ -1,4 +1,5 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:water_breathing",
     "origins:water_vision",
@@ -7,6 +8,7 @@
     "origins:like_water",
     "origins:aquatic",
     "origins:conduit_power_on_land",
+    "salty:merling_status_bar",
     "salty:merling_breath_when_spawn",
     "salty:merling_glow_in_water",
     "salty:merling_air_from_potions",

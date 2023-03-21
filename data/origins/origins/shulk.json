@@ -1,7 +1,9 @@
 {
+  "loading_priority": 10,
   "powers": [
     "origins:no_shield",
     "origins:more_exhaustion",
+    "salty:shulk_status_bar",
     "salty:shulk_no_elytra",
     "salty:shulk_natural_armor",
     "salty:shulk_resource_hiding",
