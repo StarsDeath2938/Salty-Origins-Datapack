@@ -1,4 +1,5 @@
 {
     "type": "origins:status_bar_texture",
-    "texture": "origins:textures/gui/icons_phantom.png"
+    "texture": "origins:textures/gui/icons_phantom.png",
+    "hidden": true
 }

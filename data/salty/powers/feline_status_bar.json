@@ -19,5 +19,6 @@
             "resource": "salty:feline_resource_lives",
             "compare_to": 0
         }
-    }
+    },
+    "hidden": true
 }

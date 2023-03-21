@@ -5,7 +5,7 @@
     "damage_condition": {
       "type": "origins:amount",
       "comparison": ">=",
-      "compare_to": 4
+      "compare_to": 2
     },
     "entity_action": {
       "type": "origins:apply_effect",

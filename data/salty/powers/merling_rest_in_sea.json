@@ -5,7 +5,7 @@
     "actions": [
       {
         "type": "origins:gain_air",
-        "value": -20
+        "value": -40
       },
 			{
 				"type": "origins:play_sound",
@@ -42,7 +42,7 @@
   "damage_condition": {
     "type": "origins:amount",
     "comparison": ">=",
-    "compare_to": 4.0
+    "compare_to": 2.0
   },
   "cooldown": 20
 }

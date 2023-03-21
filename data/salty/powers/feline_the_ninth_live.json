@@ -20,7 +20,7 @@
 				},
 				{
 					"type": "origins:execute_command",
-					"command": "effect give @s minecraft:weakness 300 9 true",
+					"command": "effect give @s minecraft:weakness 300 1 true",
 					"permission_level": 4
 				},
 				{

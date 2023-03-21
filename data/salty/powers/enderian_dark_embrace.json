@@ -16,10 +16,6 @@
 						"type": "origins:relative_health",
 						"comparison": "<=",
 						"compare_to": 0.6
-					},
-					{
-						"type": "origins:power_active",
-						"power": "salty:enderian_toggle_dark_embrace"
 					}
 				]
 			},
@@ -89,7 +85,7 @@
 		"damage_condition": {
 			"type": "origins:amount",
 			"comparison": ">=",
-			"compare_to": 4
+			"compare_to": 2
 		},
 		"condition": {
 			"type": "origins:resource",
