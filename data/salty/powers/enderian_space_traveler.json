@@ -1,36 +1,27 @@
 {
 	"type": "origins:active_self",
-	"cooldown": 300,
+	"cooldown": 630,
 	"entity_action": {
 		"type": "origins:and",
 		"actions": [
-			{
-				"type": "origins:feed",
-				"food": -8,
-				"saturation": 0.5
-			},
 			{
 				"type": "origins:apply_effect",
 				"effects": [
 					{
 						"effect": "minecraft:blindness",
-						"duration": 40,
+						"duration": 30,
 						"amplifier": 0
 					},
 					{
 						"effect": "minecraft:slowness",
-						"duration": 40,
-						"amplifier": 0
+						"duration": 30,
+						"amplifier": 4
 					}
 				]
 			},
 			{
-				"type": "origins:trigger_cooldown",
-				"power": "salty:enderian_ender_pearl"
-			},
-			{
 				"type": "origins:delay",
-				"ticks": 40,
+				"ticks": 30,
 				"action": {
 					"type": "origins:and",
 					"actions": [
@@ -50,31 +41,26 @@
 		"type": "origins:and",
 		"conditions": [
 			{
-				"type": "origins:resource",
-				"resource": "salty:enderian_ender_pearl",
-				"comparison": "==",
-				"compare_to": 0
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:empty"
+				}
 			},
 			{
-				"type": "origins:resource",
-				"resource": "salty:enderian_resource_raging",
-				"comparison": "==",
-				"compare_to": 0
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:empty"
+				}
 			},
 			{
-				"type": "origins:food_level",
-				"comparison": ">=",
-				"compare_to": 10
-			},
-			{
-				"type": "origins:saturation_level",
-				"comparison": ">",
-				"compare_to": 0
+				"type": "origins:sneaking"
 			}
 		]
 	},
 	"key": {
-		"key": "key.origins.secondary_active",
+		"key": "key.inventory",
 		"continuous": false
 	}
 }

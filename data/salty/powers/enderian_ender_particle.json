@@ -1,0 +1,11 @@
+{
+    "type": "origins:particle",
+    "particle": "minecraft:portal",
+    "frequency": 4,
+    "hidden": true,
+    "condition": {
+        "type": "origins:power_active",
+        "power": "salty:enderian_toggle_dark_embrace",
+        "inverted": true
+    }
+}

@@ -1,6 +1,6 @@
 {
   "type": "origins:modify_damage_dealt",
-  "entity_action": {
+  "target_action": {
     "type": "origins:apply_effect",
     "effects": [
       {
