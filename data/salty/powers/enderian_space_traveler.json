@@ -54,6 +54,12 @@
 				"compare_to": 10
 			},
 			{
+				"type": "origins:resource",
+				"comparison": "==",
+				"resource": "salty:enderian_resource_dark_embrace",
+				"compare_to": 0
+			},
+			{
 				"type": "origins:sneaking"
 			}
 		]
