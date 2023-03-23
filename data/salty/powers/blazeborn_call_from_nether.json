@@ -11,7 +11,7 @@
       "type": "origins:apply_effect",
       "effect": {
         "effect": "minecraft:wither",
-        "duration": 40,
+        "duration": 60,
         "amplifier": 1
       }
     }
@@ -21,7 +21,7 @@
     "damage_condition": {
       "type": "origins:amount",
       "comparison": ">=",
-      "compare_to": 2
+      "compare_to": 3
     },
     "target_condition": {
       "type": "origins:status_effect",

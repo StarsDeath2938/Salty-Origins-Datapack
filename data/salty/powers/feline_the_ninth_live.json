@@ -2,6 +2,10 @@
 	"type": "origins:multiple",
 	"the_ninth_live": {
 		"type": "origins:prevent_death",
+		"damage_condition": {
+			"type": "origins:out_of_world",
+			"inverted": true
+		},
 		"entity_action": {
 			"type": "origins:and",
 			"actions": [
@@ -15,7 +19,7 @@
 				},
 				{
 					"type": "origins:execute_command",
-					"command": "effect give @s minecraft:speed 20 2 true",
+					"command": "effect give @s minecraft:speed 20 1 true",
 					"permission_level": 4
 				},
 				{

@@ -1,0 +1,6 @@
+{
+    "type": "origins:particle",
+    "particle": "minecraft:white_ash",
+    "frequency": 4,
+    "hidden": true
+}

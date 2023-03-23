@@ -3,10 +3,10 @@
   "powers": [
     "origins:fire_immunity",
     "origins:water_vulnerability",
-    "origins:flame_particles",
     "origins:damage_from_snowballs",
     "origins:damage_from_potions",
     "salty:blazeborn_status_bar",
+    "salty:blazeborn_ash_particles",
     "salty:blazeborn_nether_spawn",
     "salty:blazeborn_lava_wander",
     "salty:blazeborn_call_from_nether",

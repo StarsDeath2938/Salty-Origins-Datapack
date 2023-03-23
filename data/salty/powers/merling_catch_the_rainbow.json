@@ -46,6 +46,10 @@
         "inverted": true
       },
       {
+        "type": "origins:dimension",
+        "dimension": "minecraft:overworld"
+      },
+      {
         "type": "origins:in_rain",
         "inverted": true
       },

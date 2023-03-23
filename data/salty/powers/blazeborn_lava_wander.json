@@ -1,67 +1,22 @@
 {
-    "type": "origins:multiple",
-    "lava_wander": {
-        "type": "origins:walk_on_fluid",
-        "fluid": "minecraft:lava",
-        "condition": {
-            "type": "origins:fluid_height",
-            "fluid": "minecraft:lava",
-            "comparison": "<=",
-            "compare_to": 0.4
-        }
+    "type": "origins:action_on_entity_use",
+    "bientity_action": {
+        "type": "origins:mount"
     },
-    "lava_swiming": {
-        "type": "origins:swimming",
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava",
-                    "inverted": false
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
-                    "comparison": ">",
-                    "compare_to": 0,
-                    "inverted": false
+    "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:riding",
+                "inverted": true
+            },
+            {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:strider"
                 }
-            ]
-        }
-    },
-    "lava_swiming_speed": {
-        "type": "origins:modify_lava_speed",
-        "modifier": {
-            "operation": "multiply_total",
-            "value": -0.75
-        },
-        "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:lava",
-                    "inverted": false
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
-                    "comparison": ">",
-                    "compare_to": 0.4,
-                    "inverted": false
-                },
-                {
-                    "type": "origins:swimming"
-                }
-            ]
-        },
-        "hidden": true
-    },
-    "lava_vision": {
-        "type": "origins:lava_vision",
-        "s": 4,
-        "v": 16,
-        "hidden": true
+            }
+        ]
     }
 }

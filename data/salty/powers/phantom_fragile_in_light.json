@@ -1,6 +1,5 @@
 {
 	"type": "origins:multiple",
-	
 	"fragile_in_light": {
 		"type": "origins:modify_damage_taken",
 		"modifier": {
@@ -11,25 +10,21 @@
 			"type": "origins:exposed_to_sun"
 		}
 	},
-
-	"weakness_in_light": {
-		"type": "origins:stacking_status_effect",
-		"min_stacks": -5,
-		"max_stacks": 10,
-		"duration_per_stack": 20,
-		"tick_rate": 20,
-		"effect": {
-			"effect": "minecraft:weakness",
-			"is_ambient": true,
-			"show_particles": false,
-			"show_icon": true
+	"glow_from_hurt": {
+		"type": "origins:self_action_when_hit",
+		"damage_condition": {
+			"type": "origins:amount",
+			"comparison": ">=",
+			"compare_to": 2.0
 		},
-		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "*:*_light",
-			"compare_to": 1
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:glowing",
+				"amplifier": 0,
+				"duration": 80
+			}
 		},
-		"hidden": true
+		"cooldown": 80
 	}
 }

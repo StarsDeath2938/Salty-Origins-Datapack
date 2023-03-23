@@ -20,7 +20,7 @@
 							"type": "origins:resource",
 							"comparison": ">",
 							"resource": "salty:avian_resource_momentum",
-							"compare_to": 75
+							"compare_to": 80
 						},
 						{
 							"type": "origins:resource",

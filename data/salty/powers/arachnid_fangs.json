@@ -10,12 +10,12 @@
     "effects": [
       {
         "effect": "minecraft:poison",
-        "duration": 80,
-        "amplifier": 1
+        "duration": 100,
+        "amplifier": 0
       },
       {
         "effect": "minecraft:weakness",
-        "duration": 80,
+        "duration": 100,
         "amplifier": 0
       }
     ]

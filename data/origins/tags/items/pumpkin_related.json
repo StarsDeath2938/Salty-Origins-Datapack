@@ -1,0 +1,18 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:pumpkin_pie",
+    {
+      "id": "farmersdelight:pumpkin_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_pumpkin",
+      "required": false
+    }
+  ]
+}

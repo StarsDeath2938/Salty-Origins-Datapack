@@ -1,11 +1,28 @@
 {
-    "type": "origins:particle",
-    "particle": "minecraft:portal",
-    "frequency": 4,
-    "hidden": true,
-    "condition": {
-        "type": "origins:power_active",
-        "power": "salty:enderian_toggle_dark_embrace",
-        "inverted": true
-    }
+    "type": "origins:multiple",
+    "particle": {
+        "type": "origins:particle",
+        "particle": "minecraft:portal",
+        "frequency": 4,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "salty:enderian_toggle_dark_embrace",
+            "inverted": true
+        }
+    },
+    "dark_embrace_particle": {
+        "type": "origins:particle",
+        "particle": "minecraft:sculk_charge",
+        "spread": {
+            "x": 0.4,
+            "y": 0.8,
+            "z": 0.4
+        },
+        "frequency": 8,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "salty:enderian_toggle_dark_embrace"
+        }
+    },
+    "hidden": true
 }

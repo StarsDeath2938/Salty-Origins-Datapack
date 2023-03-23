@@ -1,36 +1,56 @@
 {
 	"type": "origins:multiple",
-	"dark_embrace_ticks": {
+	"dark_embrace": {
 		"type": "origins:action_over_time",
-		"interval": 4,
+		"interval": 10,
 		"entity_action": {
-			"type": "origins:if_else",
-			"condition": {
-				"type": "origins:and",
-				"conditions": [
-					{
-						"type": "origins:exposed_to_sun",
-						"inverted": true
-					},
-					{
-						"type": "origins:relative_health",
-						"comparison": "<=",
-						"compare_to": 0.6
-					}
-				]
-			},
-			"if_action": {
-				"type": "origins:change_resource",
-				"resource": "salty:enderian_resource_dark_embrace",
-				"operation": "set",
-				"change": 1
-			},
-			"else_action": {
-				"type": "origins:change_resource",
-				"resource": "salty:enderian_resource_dark_embrace",
-				"operation": "set",
-				"change": 0
+			"type": "origins:damage",
+			"amount": 1,
+			"source": {
+				"name": "outOfWorld",
+				"bypasses_armor": true,
+				"unblockable": true,
+				"out_of_world": true
 			}
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:relative_health",
+					"comparison": ">",
+					"compare_to": 0.6
+				},
+				{
+					"type": "origins:power_active",
+					"power": "salty:enderian_toggle_dark_embrace"
+				}
+			]
+		}
+	},
+	"dark_embrace_disable_regen": {
+		"type": "origins:disable_regen",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:relative_health",
+					"comparison": ">=",
+					"compare_to": 0.6
+				},
+				{
+					"type": "origins:power_active",
+					"power": "salty:enderian_toggle_dark_embrace"
+				}
+			]
+		}
+	},
+	"dark_embrace_with_eyes": {
+		"type": "origins:night_vision",
+		"strength": 0.3,
+		"condition": {
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace"
 		}
 	},
 	"dark_embrace_effect": {
@@ -39,6 +59,12 @@
 		"max_stacks": 1,
 		"duration_per_stack": 12,
 		"effects": [
+			{
+				"effect": "minecraft:darkness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			},
 			{
 				"effect": "minecraft:speed",
 				"amplifier": 1,
@@ -62,12 +88,52 @@
 			}
 		],
 		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "salty:enderian_resource_dark_embrace",
-			"compare_to": 1
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "salty:enderian_toggle_dark_embrace"
+				},
+				{
+					"type": "origins:exposed_to_sun",
+					"inverted": true
+				}
+			]
 		},
 		"hidden": true
+	},
+	"dark_embrace_effect_under_sunlight": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 12,
+		"effects": [
+			{
+				"effect": "minecraft:darkness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			},
+			{
+				"effect": "minecraft:speed",
+				"amplifier": 1,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+		],
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "salty:enderian_toggle_dark_embrace"
+				},
+				{
+					"type": "origins:exposed_to_sun"
+				}
+			]
+		}
 	},
 	"dark_embrace_attack": {
 		"type": "origins:modify_damage_dealt",
@@ -88,10 +154,8 @@
 			"compare_to": 2
 		},
 		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "salty:enderian_resource_dark_embrace",
-			"compare_to": 1
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace"
 		},
 		"target_action": {
 			"type": "origins:apply_effect",
@@ -104,7 +168,7 @@
 		"modifier": {
 			"name": "Extra damage when Dark Embrace",
 			"operation": "addition",
-			"value": 3.0
+			"value": 2.0
 		},
 		"hidden": true
 	},
@@ -116,10 +180,8 @@
 			"compare_to": 1
 		},
 		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "salty:enderian_resource_dark_embrace",
-			"compare_to": 1
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace"
 		},
 		"attacker_action": {
 			"type": "origins:apply_effect",
@@ -131,47 +193,23 @@
 		},
 		"hidden": true
 	},
-	"dark_embrace_disable_regen": {
-		"type": "origins:disable_regen",
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:relative_health",
-					"comparison": ">=",
-					"compare_to": 0.6
-				},
-				{
-					"type": "origins:power_active",
-					"power": "salty:enderian_toggle_dark_embrace"
-				}
-			]
-		}
-	},
-	"dark_embrace_with_eyes": {
-		"type": "origins:night_vision",
-		"strength": 0.3,
-		"condition": {
-			"type": "origins:resource",
-			"comparison": "==",
-			"resource": "salty:enderian_resource_dark_embrace",
-			"compare_to": 1
-		}
-	},
-	"dark_embrace_particle": {
-		"type": "origins:particle",
-		"particle": "minecraft:portal",
-		"spread": {
-			"x": 0.4,
-			"y": 0.8,
-			"z": 0.4
+	"dark_embrace_highlight": {
+		"type": "origins:entity_glow",
+		"bientity_condition": {
+			"type": "origins:relative_rotation",
+			"actor_rotation": "head",
+			"target_rotation": "body",
+			"comparison": ">=",
+			"compare_to": -0.8
 		},
-		"frequency": 6,
-		"visible_in_first_person": true,
-		"condition": {
-			"type": "origins:power_active",
-			"power": "salty:enderian_toggle_dark_embrace"
-		}
+		"entity_condition": {
+			"type": "origins:status_effect",
+			"effect": "minecraft:darkness"
+		},
+		"use_teams": false,
+		"red": 0.3,
+		"green": 0,
+		"blue": 0.5
 	},
 	"hidden": true
 }

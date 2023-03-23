@@ -7,7 +7,7 @@
 			"actions": [
 				{
 					"type": "origins:execute_command",
-					"command": "effect give @s minecraft:weakness 5 1 false",
+					"command": "effect give @s minecraft:weakness 8 1 false",
 					"permission_level": 4
 				},
 				{

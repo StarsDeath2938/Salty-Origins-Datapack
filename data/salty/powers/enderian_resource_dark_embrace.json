@@ -5,7 +5,7 @@
     "start_value": 0,
     "hidden": true,
     "name": "Raging",
-    "description": "Whether or not you are raging.",
+    "description": "Whether or not you embrace dark.",
     "hud_render": {
         "should_render": false
     }
