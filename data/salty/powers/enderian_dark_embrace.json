@@ -68,7 +68,7 @@
 	},
 	"dark_embrace_with_eyes": {
 		"type": "origins:night_vision",
-		"strength": 0.3,
+		"strength": 0.4,
 		"condition": {
 			"type": "origins:power_active",
 			"power": "salty:enderian_toggle_dark_embrace"
