@@ -1,5 +1,23 @@
 {
-    "type": "origins:status_bar_texture",
-    "texture": "origins:textures/gui/icons_enderian.png",
-    "hidden": true
+    "type": "origins:multiple",
+    "enderian_normal": {
+        "type": "origins:status_bar_texture",
+        "texture": "origins:textures/gui/icons_enderian.png",
+        "condition": {
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace",
+            "inverted": false
+		},
+        "hidden": true
+    },
+    "enderian_dark_embrace": {
+        "type": "origins:status_bar_texture",
+        "texture": "origins:textures/gui/icons_enderian.png",
+        "condition": {
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace",
+            "inverted": true
+		},
+        "hidden": true
+    }
 }

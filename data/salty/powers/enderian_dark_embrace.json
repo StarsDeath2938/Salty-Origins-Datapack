@@ -47,23 +47,13 @@
 	},
 	"dark_embrace_overlay": {
 		"type": "origins:model_color",
-		"red": 0.2,
-		"green": 0.5,
-		"blue": 0.3,
-		"alpha": 0.9,
+		"red": 0.1,
+		"green": 0.4,
+		"blue": 0.4,
+		"alpha": 1.0,
 		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:relative_health",
-					"comparison": ">",
-					"compare_to": 0.6
-				},
-				{
-					"type": "origins:power_active",
-					"power": "salty:enderian_toggle_dark_embrace"
-				}
-			]
+			"type": "origins:power_active",
+			"power": "salty:enderian_toggle_dark_embrace"
 		}
 	},
 	"dark_embrace_with_eyes": {
