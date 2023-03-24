@@ -198,7 +198,7 @@
 		"modifier": {
 			"name": "Extra damage when Dark Embrace",
 			"operation": "addition",
-			"value": 2.0
+			"value": 3.0
 		},
 		"hidden": true
 	},
