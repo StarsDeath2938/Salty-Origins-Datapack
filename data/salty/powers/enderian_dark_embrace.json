@@ -175,8 +175,17 @@
 			"compare_to": 2
 		},
 		"condition": {
-			"type": "origins:power_active",
-			"power": "salty:enderian_toggle_dark_embrace"
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "salty:enderian_toggle_dark_embrace"
+				},
+				{
+					"type": "origins:exposed_to_sun",
+					"inverted": true
+				}
+			]
 		},
 		"target_action": {
 			"type": "origins:apply_effect",
