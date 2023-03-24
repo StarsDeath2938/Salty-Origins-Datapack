@@ -12,7 +12,7 @@
     },
     "enderian_dark_embrace": {
         "type": "origins:status_bar_texture",
-        "texture": "origins:textures/gui/icons_enderian.png",
+        "texture": "origins:textures/gui/icons_enderian_dark_embrace.png",
         "condition": {
 			"type": "origins:power_active",
 			"power": "salty:enderian_toggle_dark_embrace",
