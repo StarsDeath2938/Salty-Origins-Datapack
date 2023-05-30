@@ -12,7 +12,7 @@
 	},
 	"flesh_air_powered": {
 		"type": "origins:stacking_status_effect",
-		"min_stacks": -360,
+		"min_stacks": -240,
 		"max_stacks": 60,
 		"duration_per_stack": 10,
 		"effects": [
