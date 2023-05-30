@@ -6,6 +6,7 @@
 		"entity_action": {
 			"type": "origins:if_else_list",
 			"actions": [
+				// loss momentum in fluid
 				{
 					"condition": {
 						"type": "origins:or",
@@ -36,6 +37,60 @@
 						"change": -5
 					}
 				},
+				// loss momentum on specific block
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:block",
+								"block": "minecraft:magma_block"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:slime_block"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:honey_block"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:soul_soil"
+							}
+						]
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:avian_resource_momentum",
+						"change": -4
+					}
+				},
+				// clear momentum in cobweb
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:block",
+								"block": "minecraft:cobweb"
+							},
+							{
+								"type": "origins:block",
+								"block": "origins:temporary_cobweb"
+							}
+						]
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "salty:avian_resource_momentum",
+						"operation": "set",
+						"change": 0
+					}
+				},
+				// get momentum while sprinting
 				{
 					"condition": {
 						"type": "origins:and",
@@ -75,6 +130,7 @@
 						]
 					}
 				},
+				// loss momentum when stop sprinting
 				{
 					"condition": {
 						"type": "origins:and",
@@ -106,6 +162,7 @@
 						"change": -2
 					}
 				},
+				// start soaring
 				{
 					"condition": {
 						"type": "origins:and",
@@ -120,11 +177,7 @@
 								"type": "origins:resource",
 								"comparison": ">",
 								"resource": "salty:avian_resource_momentum",
-								"compare_to": 0
-							},
-							{
-								"type": "origins:on_block",
-								"inverted": true
+								"compare_to": 90
 							}
 						]
 					},
@@ -134,7 +187,7 @@
 							{
 								"type": "origins:change_resource",
 								"resource": "salty:avian_resource_momentum",
-								"change": -4
+								"change": -3
 							},
 							{
 								"type": "origins:add_velocity",
@@ -154,6 +207,7 @@
 						]
 					}
 				},
+				// end soaring
 				{
 					"condition": {
 						"type": "origins:and",
@@ -175,7 +229,8 @@
 					"action": {
 						"type": "origins:change_resource",
 						"resource": "salty:avian_resource_soaring",
-						"change": -2
+						"operation": "set",
+						"change": 0
 					}
 				}
 			]
