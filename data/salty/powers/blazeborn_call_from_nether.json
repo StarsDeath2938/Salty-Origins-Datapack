@@ -1,19 +1,57 @@
 {
   "type": "origins:multiple",
-  "melee_damage": {
+  "melee_damage_apply_buring": {
     "type": "origins:modify_damage_dealt",
     "damage_condition": {
       "type": "origins:amount",
       "comparison": ">=",
       "compare_to": 2
     },
+    "target_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:fire_resistance",
+          "inverted": true,
+          "min_amplifier": 0
+        },
+        {
+          "type": "origins:on_fire",
+          "inverted": true
+        }
+      ]
+    },
     "entity_action": {
-      "type": "origins:apply_effect",
-      "effect": {
-        "effect": "minecraft:wither",
-        "duration": 60,
-        "amplifier": 1
-      }
+      "type": "origins:set_on_fire",
+      "duration": 5
+    }
+  },
+  "melee_damage_wrath": {
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">=",
+      "compare_to": 2
+    },
+    "target_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:fire_resistance",
+          "inverted": true,
+          "min_amplifier": 0
+        },
+        {
+          "type": "origins:on_fire"
+        }
+      ]
+    },
+    "modifier": {
+      "name": "Extra damage when wrath",
+      "operation": "addition",
+      "value": 2
     }
   },
   "projectile_damage": {
